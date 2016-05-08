@@ -4,12 +4,14 @@ String [] url={"../sample/sample_red.png","../sample/sample_green.png","../sampl
 PImage[] type=new PImage[3];
 int[] size=new int[3];
 int index_type=0,index_pixel=0;
+int counter=0,tot_pixel=0;
 
 void load_images_to_pixel(){
   for(index_type=0;index_type<3;index_type++){
     type[index_type]=loadImage(url[index_type]);
     size[index_type]=type[index_type].width*type[index_type].height;
     type[index_type].loadPixels();
+    tot_pixel+=size[index_type];
   }
   for(index_type=0;index_type<type.length;index_type++){
     type[index_type].loadPixels();
@@ -28,4 +30,9 @@ void load_images_print(){
 
 String load_images_string_to_rgba(String tmp){
   return Integer.toHexString(Integer.parseInt(tmp));
+}
+
+int getValuse(){
+  
+  return pixel.get(
 }
